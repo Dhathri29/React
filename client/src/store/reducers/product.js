@@ -1,4 +1,4 @@
-import { ADD_PRODUCT, ADD_PRODUCT_ERROR } from "../store/actions/types";
+import { ADD_PRODUCT, ADD_PRODUCT_ERROR } from "../actions/types";
 
 const initialState = {
     count: 0,
