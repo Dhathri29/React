@@ -1,4 +1,3 @@
-import React from "react";
 import axios from "axios";
 import { ADD_PRODUCT, ADD_PRODUCT_ERROR } from "./types";
 

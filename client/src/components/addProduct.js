@@ -2,10 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import {
     Card,
-    CardActions,
     CardContent,
     Button,
-    Typography,
     makeStyles,
     Grid,
     TextField,

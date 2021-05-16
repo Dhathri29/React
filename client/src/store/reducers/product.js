@@ -7,13 +7,16 @@ const initialState = {
     loading: true,
 };
 
-export default (state = initialState, action) => {
+const productReducer = (state = initialState, action) => {
     const { type, payload } = action;
-
+    console.log(state);
+    console.log(payload);
     switch (type) {
         case ADD_PRODUCT:
+            state.products.push(payload.data[0]);
             return {
                 ...state,
+                count: state.count + 1,
                 isAuthenticated: true,
                 loading: false,
             };
@@ -27,3 +30,5 @@ export default (state = initialState, action) => {
             return state;
     }
 };
+
+export default productReducer;
