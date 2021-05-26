@@ -1,6 +1,6 @@
 const db = require("../config/db");
 
-const addProductServer = async (req, res) => {
+const addProduct = async (req, res) => {
     const { productName, price } = req.body;
 
     await db.query(
@@ -13,7 +13,13 @@ const addProductServer = async (req, res) => {
     console.log(productDetails);
     res.status(201).json({ success: true, data: productDetails });
 };
+const getProduct = async (req, res) => {
+    const productDetails = await db.query(`select * from product  `);
+    console.log(productDetails);
+    res.status(200).json({ success: true, data: productDetails });
+};
 
 module.exports = {
-    addProductServer,
+    addProduct,
+    getProduct,
 };

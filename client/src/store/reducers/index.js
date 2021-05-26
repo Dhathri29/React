@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-import productData from "./product.js";
+import productData from "./AddProduct.js";
 
 export default combineReducers({ productData });

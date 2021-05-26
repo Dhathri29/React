@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 import {
     Card,
     CardContent,
@@ -9,7 +11,7 @@ import {
     TextField,
 } from "@material-ui/core";
 import SaveIcon from "@material-ui/icons/Save";
-import { addProductServer } from "../store/actions/products";
+import { AddProduct } from "../store/actions/AddProduct";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -21,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const AddProducts = ({ addProductServer }) => {
+const AddProducts = ({ AddProduct }) => {
+    const history = useHistory();
     const classes = useStyles();
 
     const [formData, setformData] = React.useState({
@@ -41,9 +44,9 @@ const AddProducts = ({ addProductServer }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         console.log("submit worked");
-        addProductServer(formData);
+        AddProduct(formData);
+        history.push("/products");
     };
 
     return (
@@ -101,4 +104,4 @@ const AddProducts = ({ addProductServer }) => {
     );
 };
 
-export default connect(null, { addProductServer })(AddProducts);
+export default connect(null, { AddProduct })(AddProducts);
