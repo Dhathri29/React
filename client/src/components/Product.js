@@ -15,9 +15,9 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 const Product = ({ GetProduct, products }) => {
-    useEffect(() => {
-        GetProduct();
-    }, [GetProduct]);
+    // useEffect(() => {
+    //     GetProduct();
+    // }, [GetProduct]);
 
     const classes = useStyles();
 
